@@ -1,0 +1,63 @@
+#Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+127.0.0.1 hub5btmain.sandai.net
+127.0.0.1 hub5emu.sandai.net
+127.0.0.1 upgrade.xl9.xunlei.com
+23.95.218.247 odrive.aptx.xin
+# 摩尔多瓦 基希讷乌    
+178.175.128.252 exhentai.org
+# 摩尔多瓦 基希讷乌    
+178.175.128.254 exhentai.org
+# 摩尔多瓦 基希讷乌    
+178.175.129.252 exhentai.org
+# 摩尔多瓦 基希讷乌    
+178.175.129.254 exhentai.org
+# 摩尔多瓦 基希讷乌    
+178.175.132.20 exhentai.org
+# 摩尔多瓦 基希讷乌    
+178.175.132.22 exhentai.org
+# 美国 华盛顿 西雅图   
+140.82.112.3 github.com
+# 泛播    Cloudflare 
+104.20.27.25 e-hentai.org
+# 泛播    Cloudflare 
+104.20.26.25 e-hentai.org
+# 日本     
+210.140.131.223 pixiv.net
+# 日本     
+210.140.131.219 pixiv.net
+# 泛播    Cloudflare 
+104.18.12.135 www.pixiv.net
+# 泛播    Cloudflare 
+104.18.13.135 www.pixiv.net
+# 荷兰     
+185.199.111.153 assets-cdn.github.com
+# 荷兰     
+185.199.110.153 assets-cdn.github.com
+# 荷兰     
+185.199.108.153 assets-cdn.github.com
+# 荷兰     
+185.199.109.153 assets-cdn.github.com
+# 香港特别行政区   
+151.101.77.194 github.global.ssl.fastly.net
+# 香港特别行政区   
+151.101.76.133 raw.githubusercontent.com
+# 美国 华盛顿 西雅图   
+140.82.113.10 codeload.github.com
+# 泛播    Cloudflare 
+172.67.70.99 danbooru.donmai.us
+# 泛播    Cloudflare 
+104.26.10.39 danbooru.donmai.us
+# 泛播    Cloudflare 
+104.26.11.39 danbooru.donmai.us
