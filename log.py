@@ -11,7 +11,6 @@ logger.addHandler(handler)
 def main():
     logger.debug("debug")
     logger.warning("warning")
-    pass
 
 
 if __name__ == "__main__":

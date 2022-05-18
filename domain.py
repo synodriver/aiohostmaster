@@ -10,10 +10,7 @@ from log import logger
 async def _check(ip: str, count: int = 1):
     p = await asyncio.create_subprocess_shell("ping {0} -n {1}".format(ip, count), stdout=asyncio.subprocess.DEVNULL)
     await p.wait()
-    if p.returncode != 0:
-        return False
-    else:
-        return True
+    return p.returncode == 0
 
 
 class IP:
@@ -28,7 +25,7 @@ class IP:
         self.able = None  # 可以ping
 
     def __str__(self):
-        return "# " + self.addr + "\n" + self.value
+        return f"# {self.addr}" + "\n" + self.value
 
     async def check(self, count: int = 1) -> bool:
         """
@@ -48,7 +45,6 @@ class Domain:
         """
         self.host = host
         self.ips: List[IP] = list(ip)
-        pass
 
     async def get_ip(self):
         """根据自己的域名自动填充ip地址"""
@@ -72,10 +68,7 @@ class Domain:
         格式化成要输入host的数据
         :return: str
         """
-        words = ""
-        for ip in self.ips:
-            words += str(ip) + " " + self.host + "\n"
-        return words
+        return "".join(f"{str(ip)} {self.host}" + "\n" for ip in self.ips)
 
 
 if __name__ == "__main__":
@@ -92,7 +85,7 @@ if __name__ == "__main__":
         github = Domain("github.com")
         await github.get_ip()
         await github.check()
-        print(str(github))
+        print(github)
 
 
     a = loop.run_until_complete(main())

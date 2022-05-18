@@ -28,12 +28,11 @@ async def get_ip_2(session: aiohttp.ClientSession, host: str) -> List[str]:
     """输入域名找ip"""
     param = {"domain": host, "time": str(int(time.time() * 1000))}
     new_header = deepcopy(header)
-    new_header["Refer"] = "https://site.ip138.com/" + host + "/"
+    new_header["Refer"] = f"https://site.ip138.com/{host}/"
     async with session.get("https://site.ip138.com/domain/read.do?", params=param, headers=new_header) as resp:
         data = await resp.text()
         data = json.loads(data)
-        ip_list = [ip["ip"] for ip in data["data"]]
-        return ip_list
+        return [ip["ip"] for ip in data["data"]]
 
 
 @retry(Exception)
@@ -79,8 +78,7 @@ async def get_addr(session: aiohttp.ClientSession, ip: str) -> str:
         if not data:
             logger.error("Ohhhh查询 {0} 的位置的时候被反爬了".format(ip))
             return "未知"
-        addr = data[0]
-        return addr
+        return data[0]
 
 
 if __name__ == "__main__":
@@ -88,14 +86,12 @@ if __name__ == "__main__":
         async with aiohttp.ClientSession() as sessoion:
             ips = await get_ip(sessoion, "conda.anaconda.org")
             print(ips)
-        pass
 
 
     async def test_2():
         async with aiohttp.ClientSession() as sessoion:
             addr = await get_addr(sessoion, "27.10.240.65")
             print(addr)
-        pass
 
 
     asyncio.run(test_1())
